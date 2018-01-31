@@ -1,4 +1,4 @@
-package ecommerce;
+package villages;
 
 import java.sql.Types;
 
