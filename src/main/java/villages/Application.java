@@ -5,6 +5,8 @@ import javax.persistence.Persistence;
 
 import villages.dao.RegionDao;
 import villages.dao.impl.RegionDaoJpa;
+import villages.dao.PaysDao;
+import villages.dao.impl.PaysDaoJpa;
 
 public class Application {
 	private static Application instance = null;
@@ -13,6 +15,8 @@ public class Application {
 
 	private RegionDao regionDao = new RegionDaoJpa();
 	
+	private PaysDao paysDao = new PaysDaoJpa();
+
 	private Application() {
 	}
 
@@ -27,6 +31,7 @@ public class Application {
 	public static void stop() {
 		Application inst = getInstance();
 		inst.regionDao = null;
+		inst.paysDao = null;
 		inst.emf.close();
 		inst.emf = null;
 	}
@@ -35,7 +40,11 @@ public class Application {
 		return emf;
 	}
 
-	public RegionDao getProduitDao() {
+	public RegionDao getRegionDao() {
 		return regionDao;
+	}
+
+	public PaysDao getPaysDao() {
+		return paysDao;
 	}
 }
