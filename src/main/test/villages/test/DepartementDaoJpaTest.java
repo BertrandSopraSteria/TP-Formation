@@ -1,10 +1,14 @@
 package villages.test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
+
+import villages.Application;
+import villages.model.Departement;
 
 public class DepartementDaoJpaTest {
 
@@ -18,7 +22,10 @@ public class DepartementDaoJpaTest {
 
 	@Test
 	public void testFind() {
-		fail("Not yet implemented");
+		Departement d = new Departement(1l, "75000", "Paris");
+		Application.getInstance().getDepartementDao().create(d);
+		Departement e = Application.getInstance().getDepartementDao().find(1l);
+		assertEquals(d.getId(), e.getId());
 	}
 
 	@Test
