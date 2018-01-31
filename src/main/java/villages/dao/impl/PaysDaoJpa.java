@@ -7,16 +7,14 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
 
 import ecommerce.Application;
-import ecommerce.dao.AdresseDao;
-import ecommerce.model.Adresse;
+import ecommerce.dao.PaysDao;
+import ecommerce.model.Pays;
 
-public class PaysDaoJpa implements AdresseDao {
-
-	
+public class PaysDaoJpa implements PaysDao {
 	
 	@Override
-	public Adresse find(Long id) {
-		Adresse adresse = null;
+	public Pays find(Long id) {
+		Pays Pays = null;
 		EntityManager em = null;
 		EntityTransaction tx = null;
 
@@ -25,7 +23,7 @@ public class PaysDaoJpa implements AdresseDao {
 			tx = em.getTransaction();
 			tx.begin();
 
-			adresse = em.find(Adresse.class, id);
+			Pays = em.find(Pays.class, id);
 
 			tx.commit();
 		} catch (Exception e) {
@@ -39,12 +37,12 @@ public class PaysDaoJpa implements AdresseDao {
 				em.close();
 			}
 		}
-		return adresse;
+		return Pays;
 	}
 
 	@Override
-	public List<Adresse> findAll() {
-		List<Adresse> liste = null;
+	public List<Pays> findAll() {
+		List<Pays> liste = null;
 		EntityManager em = null;
 		EntityTransaction tx = null;
 
@@ -53,7 +51,7 @@ public class PaysDaoJpa implements AdresseDao {
 			tx = em.getTransaction();
 			tx.begin();
 
-			Query query = em.createQuery("from Adresse");
+			Query query = em.createQuery("from Pays");
 			liste = query.getResultList();
 
 			tx.commit();
@@ -72,7 +70,7 @@ public class PaysDaoJpa implements AdresseDao {
 	}
 
 	@Override
-	public void create(Adresse obj) {
+	public void create(Pays obj) {
 		EntityManager em = null;
 		EntityTransaction tx = null;
 
@@ -98,8 +96,8 @@ public class PaysDaoJpa implements AdresseDao {
 	}
 
 	@Override
-	public Adresse update(Adresse obj) {
-		Adresse objCopy = null;
+	public Pays update(Pays obj) {
+		Pays objCopy = null;
 		EntityManager em = null;
 		EntityTransaction tx = null;
 
@@ -127,7 +125,7 @@ public class PaysDaoJpa implements AdresseDao {
 	}
 
 	@Override
-	public void delete(Adresse obj) {
+	public void delete(Pays obj) {
 		EntityManager em = null;
 		EntityTransaction tx = null;
 
