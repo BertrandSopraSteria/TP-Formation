@@ -21,7 +21,6 @@ public class Application {
 	
 	private PaysDao paysDao = new PaysDaoJpa();
 
-	private EntityManagerFactory emf = Persistence.createEntityManagerFactory("formation");
 
 	private final DepartementDao departementDao = new DepartementDaoJpa();
 
@@ -62,3 +61,4 @@ public class Application {
 	}
 
 }
+
