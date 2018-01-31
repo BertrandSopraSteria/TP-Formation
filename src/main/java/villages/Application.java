@@ -3,15 +3,15 @@ package villages;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import villages.dao.PaysDao;
-import villages.dao.impl.PaysDaoJpa;
+import villages.dao.RegionDao;
+import villages.dao.impl.RegionDaoJpa;
 
 public class Application {
 	private static Application instance = null;
 
-	private EntityManagerFactory emf = Persistence.createEntityManagerFactory("ecommerce");
+	private EntityManagerFactory emf = Persistence.createEntityManagerFactory("villages");
 
-	private PaysDao paysDao = new PaysDaoJpa();
+	private RegionDao regionDao = new RegionDaoJpa();
 	
 	private Application() {
 	}
@@ -26,7 +26,7 @@ public class Application {
 	
 	public static void stop() {
 		Application inst = getInstance();
-		inst.paysDao = null;
+		inst.regionDao = null;
 		inst.emf.close();
 		inst.emf = null;
 	}
@@ -35,7 +35,7 @@ public class Application {
 		return emf;
 	}
 
-	public PaysDao getProduitDao() {
-		return paysDao;
+	public RegionDao getProduitDao() {
+		return regionDao;
 	}
 }
