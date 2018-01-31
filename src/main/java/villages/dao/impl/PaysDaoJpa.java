@@ -6,12 +6,12 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
 
-import ecommerce.Application;
-import ecommerce.dao.PaysDao;
-import ecommerce.model.Pays;
+import villages.Application;
+import villages.dao.PaysDao;
+import villages.model.Pays;
 
 public class PaysDaoJpa implements PaysDao {
-	
+
 	@Override
 	public Pays find(Long id) {
 		Pays Pays = null;
@@ -78,7 +78,7 @@ public class PaysDaoJpa implements PaysDao {
 			em = Application.getInstance().getEmf().createEntityManager();
 			tx = em.getTransaction();
 			tx.begin();
-			
+
 			em.persist(obj);
 
 			tx.commit();

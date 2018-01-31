@@ -9,10 +9,10 @@ import villages.dao.impl.PaysDaoJpa;
 public class Application {
 	private static Application instance = null;
 
-	private EntityManagerFactory emf = Persistence.createEntityManagerFactory("ecommerce");
+	private EntityManagerFactory emf = Persistence.createEntityManagerFactory("villages");
 
 	private PaysDao paysDao = new PaysDaoJpa();
-	
+
 	private Application() {
 	}
 
@@ -23,7 +23,7 @@ public class Application {
 
 		return instance;
 	}
-	
+
 	public static void stop() {
 		Application inst = getInstance();
 		inst.paysDao = null;

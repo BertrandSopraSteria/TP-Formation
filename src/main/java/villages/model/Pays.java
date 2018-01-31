@@ -11,13 +11,56 @@ public class Pays {
 	@Id
 	@GeneratedValue
 	private Long id;
-	
+
 	@Version
 	private int version;
-	
+
 	@Column
 	private String code;
-	
+
 	@Column
 	private String libelle;
+
+	public Pays() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Pays(String code, String libelle) {
+		super();
+		this.code = code;
+		this.libelle = libelle;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public int getVersion() {
+		return version;
+	}
+
+	public void setVersion(int version) {
+		this.version = version;
+	}
+
+	public String getCode() {
+		return code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getLibelle() {
+		return libelle;
+	}
+
+	public void setLibelle(String libelle) {
+		this.libelle = libelle;
+	}
 }
