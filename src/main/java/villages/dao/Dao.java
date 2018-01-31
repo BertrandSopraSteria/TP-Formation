@@ -1,4 +1,4 @@
-package ecommerce.dao;
+package villages.dao;
 
 import java.util.List;
 
