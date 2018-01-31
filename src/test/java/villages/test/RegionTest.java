@@ -7,7 +7,7 @@ import villages.model.Region;
 public class RegionTest {
 
 	public static void main(String[] args) {
-		RegionDao regionDao = Application.getInstance().getProduitDao();
+		RegionDao regionDao = Application.getInstance().getRegionDao();
 
 		Region region1 = new Region("Code1", "Libelle1");
 

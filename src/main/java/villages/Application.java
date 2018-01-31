@@ -21,8 +21,7 @@ public class Application {
 	
 	private PaysDao paysDao = new PaysDaoJpa();
 
-
-	private final DepartementDao departementDao = new DepartementDaoJpa();
+	private DepartementDao departementDao = new DepartementDaoJpa();
 
 
 	private Application() {
